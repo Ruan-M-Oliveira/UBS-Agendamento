@@ -1,0 +1,554 @@
+/* --- PALETA DE CORES ---
+   Destaque/Ação (Cobre/Ouro): #DAA520 
+   Sucesso/Saúde: #4CAF50 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #F8F8F8;
+    min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: 0.5px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.top-bar {
+    height: 6px;
+    background: linear-gradient(90deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
+}
+
+.luxury-card {
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.luxury-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+#main-header {
+    background: #FFFFFF;
+    color: #333333;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+.logo i {
+    color: #DAA520;
+    margin-right: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 35px;
+}
+
+.nav-item {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 3px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item:hover {
+    color: #DAA520;
+    border-bottom: 1px solid #DAA520;
+}
+
+.user-info {
+    font-weight: 500;
+    color: #666;
+    margin-right: 15px;
+}
+
+.auth-status-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    color: #DAA520;
+    margin-left: 15px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+.profile-icon:hover {
+    color: #C49219;
+}
+
+/* --- SEÇÃO HERO/BANNER --- */
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    max-width: 550px;
+    text-align: left;
+}
+
+.sub-title {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #DAA520;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-content h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* --- BOTÕES DE AÇÃO --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cta, .btn-submit {
+    background: #DAA520;
+    color: #FFFFFF;
+}
+
+.btn-cta:hover, .btn-submit:hover {
+    background: #C49219;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    background: #95a5a6; 
+    color: #fff;
+    box-shadow: none;
+}
+
+.btn-cancel:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background: #e74c3c;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    box-shadow: none;
+}
+
+/* --- SEÇÃO SOBRE NÓS --- */
+.about-block {
+    padding: 40px;
+    text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+.stat-item i {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.stat-item h4 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* --- SEÇÕES DE CONTEÚDO GERAL --- */
+.content-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.light-bg {
+    background-color: #F8F8F8;
+}
+
+.card {
+    max-width: 600px;
+    padding: 35px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.card-info, .section-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content-section h3 i {
+    color: #4CAF50;
+    margin-right: 8px;
+}
+
+/* --- ÁREA DE AUTENTICAÇÃO (BLOCO CENTRALIZADO) --- */
+
+.auth-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.auth-card {
+    max-width: 400px;
+    min-width: 300px;
+    text-align: left;
+    padding: 35px;
+}
+
+.title-auth {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.forgot-password {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #DAA520;
+}
+
+/* --- FORMULÁRIOS GERAIS --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select {
+    border: 1px solid #DDD;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #DAA520;
+    outline: none;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+/* --- TABELAS --- */
+.table-responsive {
+    padding: 0;
+    margin: 30px auto;
+}
+
+#consultas-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#consultas-tabela thead th {
+    background: #DAA520;
+    color: #fff;
+    padding: 15px 10px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#consultas-tabela tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #EEE;
+    color: #555;
+    text-align: left;
+}
+
+#consultas-tabela tbody tr:hover {
+    background-color: #FAFAFA;
+}
+
+.empty-message {
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    background: #E8F5E9;
+    padding: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+/* --- SEÇÃO CONTATO/RODAPÉ --- */
+.info-blocks {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-block {
+    flex-basis: 30%;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.info-block i {
+    color: #DAA520;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #333333;
+    color: #AAAAAA;
+    padding: 25px 0;
+    font-size: 0.8em;
+}
+
+/* --- ESTILOS DE LOGIN/REGISTRO (Layout Dividido) --- */
+
+.auth-body {
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.auth-wrapper {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.auth-box {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.auth-image {
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+.auth-form-wrapper {
+    width: 60%;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group-auth {
+    margin-bottom: 20px;
+}
+
+.form-group-auth label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.form-group-auth input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+}
+
+.btn-auth {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.separator {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: #aaa;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #eee;
+}
+
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+
+.small-link {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.link-registro {
+    color: #DAA520;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    #main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .auth-blocks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-block {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .auth-box {
+        flex-direction: column; 
+        max-width: 450px;
+    }
+
+    .auth-image {
+        width: 100%;
+        height: 150px; 
+        min-height: 0;
+    }
+
+    .auth-form-wrapper {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+}

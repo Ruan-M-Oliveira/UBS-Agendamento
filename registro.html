@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - UBS Agendamento</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-wrapper">
+        <div class="auth-box luxury-card">
+            <div class="auth-image" 
+                 style="background-image: url('https://picsum.photos/600/600?random=6');">
+            </div>
+
+            <div class="auth-form-wrapper">
+                
+                <h2 class="title-auth">Crie sua Conta</h2>
+                <form id="register-form" class="form-register">
+                    <div class="form-group-auth">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group-auth">
+                        <label for="register-senha">Nova Senha:</label>
+                        <input type="password" id="register-senha" required>
+                    </div>
+                    <div class="form-group-auth">
+                        <label for="register-confirm-senha">Confirmar Senha:</label>
+                        <input type="password" id="register-confirm-senha" required>
+                    </div>
+
+                    <button type="submit" class="btn-auth btn-submit">REGISTRAR</button>
+                    <p id="register-msg" class="error-msg"></p>
+                </form>
+                
+                <p class="separator">ou</p>
+
+                <p class="small-link">
+                    Já tem conta? <a href="/login.html" class="link-registro">Volte para o Login.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('loggedUserEmail')) {
+                window.location.href = 'index.html'; 
+            }
+            setupAuthListeners('register');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBS Agendamento | Início</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <header id="main-header">
+        <div class="container">
+            <h1 class="logo"><i class="fas fa-heartbeat"></i> Agendamento UBS</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="nav-item">Início</a></li>
+                    <li><a href="#sobre" class="nav-item">Sobre Nós</a></li>
+                    <li id="nav-agendar" style="display:none;"><a href="#agendar" class="nav-item">Agendar</a></li>
+                    <li id="nav-consultas" style="display:none;"><a href="#consultas" class="nav-item">Minha Agenda</a></li>
+                </ul>
+            </nav>
+            <div id="auth-status" class="auth-status-right">
+                <span id="user-display" class="user-info" style="display:none;"></span>
+                <button id="logout-btn" class="btn btn-logout" style="display:none;">Sair</button>
+                <a href="/login.html" id="profile-icon" class="profile-icon">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero" style="background-image: url('https://picsum.photos/1600/900?random=1');"> 
+        <div class="container">
+            <div class="hero-content luxury-card">
+                <p class="sub-title">Sua Saúde, Seu Poder.</p>
+                <h2>Acesso Rápido à Agenda da UBS.</h2>
+                <a href="login.html" class="btn btn-cta">Agende seu Horário</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre" class="content-section light-bg">
+        <div class="container">
+            <h3><i class="fas fa-hospital"></i> Sobre Nossa Unidade</h3>
+            <div class="luxury-card about-block">
+                <p class="section-info">
+                    Somos o sistema de agendamento digital da Unidade Básica de Saúde, dedicado a otimizar seu tempo e garantir que você tenha acesso rápido e organizado aos serviços essenciais de saúde. Nosso objetivo é simplificar a marcação de consultas, focando na sua comodidade.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fas fa-calendar-check fa-3x"></i>
+                        <h4>100% Digital</h4>
+                        <p>Agendamento a qualquer hora.</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shield-alt fa-3x"></i>
+                        <h4>Dados Seguros</h4>
+                        <p>Sua privacidade é nossa prioridade.</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-user-md fa-3x"></i>
+                        <h4>Serviço Essencial</h4>
+                        <p>Conectando você aos melhores profissionais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="content-area" style="display:none;">
+
+        <section id="agendar" class="content-section">
+            <div class="container">
+                <div class="card luxury-card">
+                    <h3><i class="fas fa-calendar-plus"></i> Agendamento Prioritário</h3>
+                    <p class="card-info">Defina a data e o serviço desejado com clareza.</p>
+                    
+                    <form id="agendamento-form">
+                        <input type="hidden" id="consulta-id">
+                        <div class="form-group"><label for="data">Data Desejada:</label><input type="date" id="data" required></div>
+                        <div class="form-group"><label for="hora">Horário:</label><input type="time" id="hora" required></div>
+                        <div class="form-group">
+                            <label for="especialidade">Especialidade/Serviço:</label>
+                            <select id="especialidade" required>
+                                <option value="">Selecione o Serviço...</option>
+                                <option>Clínica Geral</option>
+                                <option>Odontologia</option>
+                                <option>Enfermagem</option>
+                                <option>Vacinação</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-submit" id="form-button">Confirmar Agendamento</button>
+                            <button type="button" class="btn btn-cancel" id="cancelar-edicao" style="display:none;">Cancelar Edição</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="consultas" class="content-section light-bg">
+            <div class="container">
+                <h3><i class="fas fa-list-ul"></i> Suas Consultas Ativas</h3>
+                <p class="section-info">Gerencie seus próximos compromissos na UBS.</p>
+
+                <div class="table-responsive luxury-card">
+                    <table id="consultas-tabela">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Serviço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+                <div id="no-consultas" style="text-align: center; margin-top: 20px; display: block;">
+                    <p class="empty-message"><i class="fas fa-check-circle"></i> Não há agendamentos pendentes.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <section id="contato" class="content-section">
+        <div class="container contact-info">
+            <h3><i class="fas fa-map-marker-alt"></i> Suporte UBS</h3>
+            <div class="info-blocks">
+                <div class="info-block luxury-card">
+                    <i class="fas fa-phone fa-2x"></i><h4>Fale Conosco</h4><p>(81) 3419-6700</p>
+                </div>
+                <div class="info-block luxury-card">
+                    <i class="fas fa-envelope fa-2x"></i><h4>Suporte Digital</h4><p>www.cesar.school.com</p>
+                </div>
+                <div class="info-block luxury-card">
+                    <i class="fas fa-home fa-2x"></i><h4>Endereço Principal</h4><p>Avenida, Cais do Apolo, 77, Recife - PE, 50030-220</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 UBS | Agendamento Digital.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

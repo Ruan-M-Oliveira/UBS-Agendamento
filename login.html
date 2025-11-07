@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UBS Agendamento</title>
+    <link rel="stylesheet" href="/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-wrapper">
+        <div class="auth-box luxury-card">
+            <div class="auth-image" 
+                 style="background-image: url('https://picsum.photos/600/600?random=5');">
+            </div>
+
+            <div class="auth-form-wrapper">
+                
+                <h2 class="title-auth">Entrar para Continuar</h2>
+                <form id="login-form" class="form-login">
+                    <div class="form-group-auth">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" placeholder="JonSafadeza@exemplo.com" required>
+                    </div>
+                    <div class="form-group-auth">
+                        <label for="login-senha">Senha:</label>
+                        <input type="password" id="login-senha" required>
+                    </div>
+                    
+                    <div class="auth-options">
+                        <label>
+                            <input type="checkbox" id="remember-me">
+                            Lembrar acesso
+                        </label>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth btn-submit">LOGIN</button>
+                    <p id="login-msg" class="error-msg"></p>
+                    
+                    <p class="separator">ou</p>
+
+                    <p class="small-link">
+                        Não tem conta? <a href="/registro.html" class="link-registro">Crie uma agora.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('loggedUserEmail')) {
+                window.location.href = 'index.html'; 
+            }
+            setupAuthListeners('login');
+        });
+    </script>
+</body>
+</html>
